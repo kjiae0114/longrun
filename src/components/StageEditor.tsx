@@ -6,6 +6,7 @@ import type { Play, PlayContent, PlayStage } from '../domain/play';
 import { getStoreErrorMessage } from '../storage/errorMessages';
 import { playStore } from '../storage/playStore';
 import { ConfirmDialog } from './ConfirmDialog';
+import { PastPlayReference } from './PastPlayReference';
 import { PlayValues } from './PlayValues';
 import { StageFields } from './StageFields';
 
@@ -151,6 +152,8 @@ export function StageEditor({ play, stage, editing }: StageEditorProps) {
             setError(null);
           }}
         />
+
+        {stage === 4 && <PastPlayReference currentPlayId={play?.id ?? null} />}
 
         {error !== null && (
           <p className="error" role="alert">

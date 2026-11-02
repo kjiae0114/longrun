@@ -117,11 +117,13 @@ test('휴지통 비우기는 확인 후 휴지통의 PLAY만 지운다', async (
 test('상세에서 복구하거나 영구 삭제할 수 있다', async ({ page }) => {
   await seedTrash(page);
   await card(page, '완료 문제').getByRole('link', { name: '보기' }).click();
+  await expect(page.locator('.detail-section')).toHaveCount(7);
   await page.getByRole('button', { name: '복구' }).click();
   await expect(page).toHaveURL('/trash');
   await expect(page.locator('.card-title')).toHaveText(['진행 문제']);
 
   await card(page, '진행 문제').getByRole('link', { name: '보기' }).click();
+  await expect(page.locator('.detail-section')).toHaveCount(7);
   await page.getByRole('button', { name: '영구 삭제' }).click();
   await page.getByRole('dialog').getByRole('button', { name: '영구 삭제' }).click();
   await expect(page).toHaveURL('/trash');
