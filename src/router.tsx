@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { AllPlaysPage } from './pages/AllPlaysPage';
+import { BackupPage } from './pages/BackupPage';
 import { ErrorPage } from './pages/ErrorPage';
 import { HistoryDetailPage } from './pages/HistoryDetailPage';
 import { HistoryPage } from './pages/HistoryPage';
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
           { path: 'history', element: <HistoryPage /> },
           { path: 'history/:id', element: <HistoryDetailPage /> },
           { path: 'history/:id/edit/:stage', element: <PlayEditPage /> },
+          { path: 'backup', element: <BackupPage /> },
           { path: 'trash', element: <TrashPage /> },
           { path: 'trash/:id', element: <TrashDetailPage /> },
           { path: '*', element: <NotFoundPage /> },

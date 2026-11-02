@@ -20,6 +20,7 @@ export function Layout() {
       <footer className="footer">
         <span>관리</span>
         <Link to="/trash">휴지통</Link>
+        <Link to="/backup">데이터 백업</Link>
       </footer>
     </div>
   );
