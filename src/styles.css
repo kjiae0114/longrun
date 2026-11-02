@@ -17,6 +17,7 @@
     'Pretendard Variable', Pretendard, system-ui, -apple-system, 'Segoe UI', 'Malgun Gothic',
     sans-serif;
   line-height: 1.6;
+  word-break: keep-all;
   color: var(--text);
   background: var(--bg);
 }
@@ -283,7 +284,6 @@ button.danger:hover {
 /* 입력 */
 
 .panel {
-  margin-top: 20px;
   padding: 24px;
   border: 1px solid var(--border);
   border-radius: var(--radius);

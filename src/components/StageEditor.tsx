@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { useBlocker, useNavigate } from 'react-router-dom';
-import { NEXT_BUTTON_LABELS, REQUIRED_MESSAGES, STAGE_NAMES } from '../domain/labels';
+import {
+  NEXT_BUTTON_LABELS,
+  REQUIRED_MESSAGES,
+  STAGE_GUIDES,
+  STAGE_NAMES,
+} from '../domain/labels';
 import { isStageComplete, PLAY_STAGES } from '../domain/play';
 import type { Play, PlayContent, PlayStage } from '../domain/play';
 import { getStoreErrorMessage } from '../storage/errorMessages';
@@ -142,6 +147,7 @@ export function StageEditor({ play, stage, editing }: StageEditorProps) {
         ))}
       </ol>
       <h1>{STAGE_NAMES[stage]}</h1>
+      <p className="page-intro">{STAGE_GUIDES[stage]}</p>
 
       <form
         className="panel"

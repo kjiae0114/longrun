@@ -9,6 +9,14 @@ test('①~⑦을 작성하고 완료하면 해결되지 않아도 완료된다',
   expect(play.problem).toBe('문제 내용');
 });
 
+test('단계마다 무엇을 적으면 되는지 안내한다', async ({ page }) => {
+  await page.goto('/plays/new');
+  await expect(page.getByText('실제로 있었던 일을 적어 보세요')).toBeVisible();
+  await page.getByLabel('무슨 일이 있었는가?').fill('상황');
+  await page.getByRole('button', { name: '원인 찾아보기' }).click();
+  await expect(page.getByText('모르겠다고 적어도 괜찮습니다')).toBeVisible();
+});
+
 test('새 PLAY 화면에 들어가기만 하면 생성되지 않는다', async ({ page }) => {
   await page.goto('/plays/new');
   await page.getByRole('button', { name: '저장하고 나가기' }).click();
