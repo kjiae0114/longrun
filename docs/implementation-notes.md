@@ -63,7 +63,8 @@ npm 10.8.1에서는 `npm install`이 `edgesOut` 오류로 실패한다. `npm ci`
 - 단위 테스트: 54개 통과
 - Playwright E2E: 42개 통과 (Chromium, 3회 반복 실행)
 - 확인 범위: 15-13의 테스트 대상과 15-12의 통합 확인 항목, 저장 실패, 손상 데이터, 입력값의 스크립트 미실행
-- 미확인: GitHub Actions 실행, Chromium 외 브라우저
+- GitHub Actions: 첫 푸시(`09b898b`)에서 설치, 빌드, 단위 테스트 통과. E2E는 CI에 포함하지 않는다.
+- 미확인: Chromium 외 브라우저
 
 ## 구현 중 발견한 문제
 
