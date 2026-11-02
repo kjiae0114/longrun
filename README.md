@@ -38,6 +38,8 @@ npm run test:e2e
 ```
 src/
 ├── components/  공통 UI
-└── pages/       라우트별 화면
+├── domain/      PLAY 타입과 상태·완료 규칙
+├── pages/       라우트별 화면
+└── storage/     localStorage 저장과 백업
 e2e/             Playwright E2E 테스트
 ```
