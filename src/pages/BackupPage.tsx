@@ -57,7 +57,9 @@ export function BackupPage() {
   return (
     <>
       <h1>데이터 백업</h1>
-      <p>LONG RUN의 기록은 이 브라우저에만 저장됩니다. 파일로 직접 보관하고 복원할 수 있습니다.</p>
+      <p className="page-intro">
+        LONG RUN의 기록은 이 브라우저에만 저장됩니다. 파일로 직접 보관하고 복원할 수 있습니다.
+      </p>
 
       <section className="detail-section">
         <h2>내보내기</h2>

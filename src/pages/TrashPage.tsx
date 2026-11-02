@@ -34,6 +34,7 @@ export function TrashPage() {
   return (
     <>
       <h1>휴지통</h1>
+      <p className="page-intro">삭제한 PLAY는 직접 지우기 전까지 여기에 보관됩니다.</p>
       {error !== null && (
         <p className="error" role="alert">
           {error}

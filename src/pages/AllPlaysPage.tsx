@@ -10,6 +10,7 @@ export function AllPlaysPage() {
   return (
     <>
       <h1>전체 진행 중 PLAY</h1>
+      <p className="page-intro">이어갈 PLAY를 직접 선택합니다.</p>
       {plays.length > 0 ? (
         <InProgressList plays={plays} onChange={refresh} />
       ) : (

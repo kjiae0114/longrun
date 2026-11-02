@@ -19,7 +19,9 @@ export function HistoryDetailPage() {
   return (
     <article>
       <h1>{play.problem}</h1>
-      <p className="card-meta">완료일 {play.completedAt && formatDate(play.completedAt)}</p>
+      <p className="card-meta page-intro">
+        완료일 {play.completedAt && formatDate(play.completedAt)}
+      </p>
       <PlayDetail
         play={play}
         renderStageAction={(stage) => (

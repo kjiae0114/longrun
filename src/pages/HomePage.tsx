@@ -12,6 +12,7 @@ export function HomePage() {
   return (
     <>
       <h1>HOME</h1>
+      <p className="page-intro">하나의 문제를 하나의 PLAY로 정리하고, 판단은 직접 내립니다.</p>
       <Link className="button primary" to="/plays/new">
         새 PLAY 시작
       </Link>

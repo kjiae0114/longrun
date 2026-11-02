@@ -132,14 +132,19 @@ export function StageEditor({ play, stage, editing }: StageEditorProps) {
     <article>
       <ol className="stages" aria-label="PLAY 단계">
         {PLAY_STAGES.map((target) => (
-          <li key={target} aria-current={target === stage ? 'step' : undefined}>
-            {STAGE_NAMES[target].charAt(0)}
+          <li
+            key={target}
+            className={target < stage ? 'done' : undefined}
+            aria-current={target === stage ? 'step' : undefined}
+          >
+            <span>{target}</span>
           </li>
         ))}
       </ol>
       <h1>{STAGE_NAMES[stage]}</h1>
 
       <form
+        className="panel"
         onSubmit={(event) => {
           event.preventDefault();
         }}

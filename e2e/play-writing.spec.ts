@@ -101,6 +101,18 @@ test('다음 행동을 정한다를 고르면 내용 없이 완료할 수 없다
   await expect(page).toHaveURL('/history');
 });
 
+test('스크롤한 긴 단계에서 다음 단계로 가면 화면 맨 위부터 보여준다', async ({ page }) => {
+  await writeThroughResponse(page, '문제');
+  await page.getByLabel('실행함', { exact: true }).check();
+  await page.getByRole('button', { name: '결과 확인하기' }).click();
+  await page.getByLabel('해결됨', { exact: true }).check();
+  await page.getByRole('group', { name: '스트레스' }).getByLabel('증가').check();
+  await page.getByRole('group', { name: '통제할 수 있다는' }).getByLabel('감소').check();
+  await page.getByRole('button', { name: '다음 행동 정하기' }).click();
+  await expect(page.getByRole('heading', { name: '⑦ 다음 행동' })).toBeVisible();
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+});
+
 test('이전 판단을 펼쳐서 볼 수 있고 입력한 스크립트는 실행되지 않는다', async ({ page }) => {
   const script = '<img src=x onerror="window.__xss=1">';
   await writeThroughResponse(page, script);

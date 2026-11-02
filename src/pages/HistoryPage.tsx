@@ -15,6 +15,7 @@ export function HistoryPage() {
     return (
       <>
         <h1>HISTORY</h1>
+        <p className="page-intro">완료한 PLAY를 다시 확인하는 곳입니다.</p>
         <Link className="button primary" to="/plays/new">
           새 PLAY 시작
         </Link>
@@ -25,6 +26,7 @@ export function HistoryPage() {
   return (
     <>
       <h1>HISTORY</h1>
+      <p className="page-intro">완료한 PLAY를 다시 확인하는 곳입니다.</p>
       <label className="field">
         <span>문제 검색</span>
         <input type="search" value={query} onChange={(event) => setQuery(event.target.value)} />

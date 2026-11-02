@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet, ScrollRestoration } from 'react-router-dom';
 
 export function Layout() {
   return (
@@ -22,6 +22,7 @@ export function Layout() {
         <Link to="/trash">휴지통</Link>
         <Link to="/backup">데이터 백업</Link>
       </footer>
+      <ScrollRestoration />
     </div>
   );
 }
