@@ -4,6 +4,7 @@
   --color-border: #d8dee4;
   --color-bg: #ffffff;
   --color-primary: #1f5fbf;
+  --color-danger: #c62828;
   font-family: system-ui, -apple-system, 'Segoe UI', 'Malgun Gothic', sans-serif;
   color: var(--color-text);
   background: var(--color-bg);
@@ -71,4 +72,134 @@ body {
 
 .footer a {
   color: inherit;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+button,
+.button {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button.primary,
+.button.primary {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+button.danger {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.stages {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+  color: var(--color-muted);
+}
+
+.stages [aria-current='step'] {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.field {
+  display: block;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+
+.field > span,
+.field > legend {
+  display: block;
+  margin-bottom: 6px;
+  padding: 0;
+  font-weight: 600;
+}
+
+textarea,
+input[type='date'],
+input[type='search'] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.choice {
+  display: block;
+  padding: 4px 0;
+}
+
+.choice input {
+  margin-right: 8px;
+}
+
+.value {
+  margin-bottom: 12px;
+}
+
+.value-label {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.value-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.error {
+  color: var(--color-danger);
+}
+
+.previous {
+  margin-top: 24px;
+}
+
+.previous details {
+  margin: 8px 0 0 16px;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.dialog {
+  max-width: 420px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.dialog p {
+  margin-top: 0;
 }
