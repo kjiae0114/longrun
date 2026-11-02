@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import { AllPlaysPage } from './pages/AllPlaysPage';
 import { ErrorPage } from './pages/ErrorPage';
 import { HistoryPage } from './pages/HistoryPage';
 import { HomePage } from './pages/HomePage';
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
           { index: true, element: <HomePage /> },
+          { path: 'plays', element: <AllPlaysPage /> },
           { path: 'plays/new', element: <NewPlayPage /> },
           { path: 'plays/:id/stages/:stage', element: <PlayStagePage /> },
           { path: 'history', element: <HistoryPage /> },

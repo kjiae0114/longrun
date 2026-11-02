@@ -194,6 +194,43 @@ summary {
   cursor: pointer;
 }
 
+.cards {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.card-title {
+  margin: 0 0 4px;
+  overflow-wrap: anywhere;
+}
+
+.card-meta {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.card-excerpt {
+  display: -webkit-box;
+  margin: 8px 0 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.card .actions {
+  margin-top: 12px;
+}
+
 .dialog {
   max-width: 420px;
   border: 1px solid var(--color-border);
