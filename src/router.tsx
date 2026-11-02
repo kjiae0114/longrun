@@ -7,6 +7,7 @@ import { HistoryPage } from './pages/HistoryPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { NewPlayPage, PlayEditPage, PlayStagePage } from './pages/PlayEditorPages';
+import { TrashDetailPage } from './pages/TrashDetailPage';
 import { TrashPage } from './pages/TrashPage';
 
 export const router = createBrowserRouter([
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
           { path: 'history/:id', element: <HistoryDetailPage /> },
           { path: 'history/:id/edit/:stage', element: <PlayEditPage /> },
           { path: 'trash', element: <TrashPage /> },
+          { path: 'trash/:id', element: <TrashDetailPage /> },
           { path: '*', element: <NotFoundPage /> },
         ],
       },
