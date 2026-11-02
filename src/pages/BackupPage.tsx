@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 import { ConfirmDialog } from '../components/ConfirmDialog';
+import { createSampleBackup } from '../dev/samplePlays';
 import { getStoreErrorMessage } from '../storage/errorMessages';
 import { playStore } from '../storage/playStore';
 
@@ -77,6 +78,16 @@ export function BackupPage() {
           <input type="file" accept=".json,application/json" onChange={selectFile} />
         </label>
       </section>
+
+      {import.meta.env.DEV && (
+        <section className="detail-section">
+          <h2>샘플 데이터 (개발용)</h2>
+          <p>예시 PLAY 3개로 현재 데이터를 교체합니다. 개발 서버에서만 보입니다.</p>
+          <button type="button" onClick={() => setPendingText(createSampleBackup())}>
+            샘플 데이터 불러오기
+          </button>
+        </section>
+      )}
 
       {message !== null && <p role="status">{message}</p>}
       {error !== null && (
