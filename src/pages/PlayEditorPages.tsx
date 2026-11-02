@@ -30,3 +30,18 @@ export function PlayStagePage() {
   }
   return <StageEditor key={`${id}-${stage}`} play={play} stage={stage} editing={false} />;
 }
+
+/** 완료 PLAY 수정. 모든 단계로 들어갈 수 있고 완료 상태는 유지한다. */
+export function PlayEditPage() {
+  const { id = '', stage: stageParam } = useParams();
+  const play = findPlay(id);
+  if (play === null) return <NotFoundPage />;
+
+  const status = getPlayStatus(play);
+  if (status === 'IN_PROGRESS') return <Navigate to={`/plays/${id}/stages/1`} replace />;
+  if (status === 'TRASHED') return <Navigate to={`/trash/${id}`} replace />;
+
+  const stage = parseStage(stageParam);
+  if (stage === null) return <Navigate to={`/history/${id}`} replace />;
+  return <StageEditor key={`${id}-${stage}`} play={play} stage={stage} editing />;
+}
